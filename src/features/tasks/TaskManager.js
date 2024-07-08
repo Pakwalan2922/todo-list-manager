@@ -68,7 +68,7 @@ const TaskManager = () => {
   return (
     <div>
       <h2 className="text-[22px] font-bold mt-[40px] mb-4">Tasks Create</h2>
-      <div className="mb-4 flex flex-col w-[50%]">
+      <div className="mb-4 flex flex-col w-full xl:w-[50%]">
         <div className='flex flex-col'>
           <label className='text-[14px] font-semibold'>Task Name:</label>
           <input
