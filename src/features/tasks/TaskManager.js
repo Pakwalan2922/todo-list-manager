@@ -118,13 +118,17 @@ const TaskManager = () => {
                 <p className="font-bold text-[20px] mb-2">Task Name: <span className='text-[18px] font-medium'>{task.title}</span></p>
                 <p className="font-bold text-[20px] mb-2">Task Description: <span className='text-[18px] font-medium'>{task.description}</span></p>
               </div>
-              <div className='flex flex-row mt-2 mb-0'>
-                <span className={`p-1 ${task.status === 'Doing' ? 'bg-yellow-200 text-[#EF6C00] font-semibold' : task.status === 'Completed' ? 'bg-green-200 text-[#2E7D32] font-semibold' : 'bg-red-200 text-[#C62828] font-semibold'} rounded-xl px-3 mr-2`}>
-                  {task.status}
-                </span>
-                <button onClick={() => handleToggleStatus(task)} className="bg-[#28C1F8] hover:bg-[#0D6BFA] p-1 rounded-full px-4 mr-2 flex flex-row justify-center items-center text-white"><MdChangeCircle className='font-poppins font-semibold text-2xl mr-1' />Change Status</button>
-                {task.status === 'Doing' && <button onClick={() => handleEditTask(task)} className="bg-[#28C1F8] hover:bg-[#0D6BFA] p-1 rounded-full px-4 mr-2 flex flex-row justify-center items-center text-white"><MdEditDocument className='font-poppins font-semibold text-2xl mr-1' />Edit</button>}
-                <button onClick={() => handleDeleteTask(task.id)} className="bg-[#F4511E] hover:bg-[#F57C00] p-1 rounded-full px-4 flex flex-row justify-center items-center text-white"><MdDeleteForever className='font-poppins font-semibold text-2xl mr-1' />Delete</button>
+              <div className='flex flex-col xl:flex-row mt-2 mb-0'>
+                <div className='flex flex-row items-center mb-2'>
+                  <span className={`p-1 ${task.status === 'Doing' ? 'bg-yellow-200 text-[#EF6C00] font-semibold' : task.status === 'Completed' ? 'bg-green-200 text-[#2E7D32] font-semibold' : 'bg-red-200 text-[#C62828] font-semibold'} rounded-xl px-3 mr-2`}>
+                    {task.status}
+                  </span>
+                  <button onClick={() => handleToggleStatus(task)} className="bg-[#28C1F8] hover:bg-[#0D6BFA] p-1 rounded-full px-4 mr-2 flex flex-row justify-center items-center text-white w-[165px]"><MdChangeCircle className='font-poppins font-semibold text-2xl mr-1' />Change Status</button>
+                </div>
+                <div className='flex flex-row items-center mb-2'>
+                  {task.status === 'Doing' && <button onClick={() => handleEditTask(task)} className="bg-[#28C1F8] hover:bg-[#0D6BFA] p-1 rounded-full px-4 mr-2 flex flex-row justify-center items-center text-white"><MdEditDocument className='font-poppins font-semibold text-2xl mr-1' />Edit</button>}
+                  <button onClick={() => handleDeleteTask(task.id)} className="bg-[#F4511E] hover:bg-[#F57C00] p-1 rounded-full px-4 flex flex-row justify-center items-center text-white"><MdDeleteForever className='font-poppins font-semibold text-2xl mr-1' />Delete</button>
+                </div>
               </div>
             </li>
           ))}
