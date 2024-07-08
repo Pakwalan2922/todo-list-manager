@@ -50,7 +50,7 @@ const CategoryManager = () => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="border p-2 mr-2 w-[50%] rounded-lg"
+          className="border p-2 mr-2 w-[65%] xl:w-[50%] rounded-lg"
           placeholder="Category name"
         />
         <button onClick={handleAddCategory} className="bg-[#28C1F8] hover:bg-blue-800 text-white p-2 rounded-full px-4 py-2">
