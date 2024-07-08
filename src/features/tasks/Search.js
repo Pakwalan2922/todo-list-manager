@@ -25,7 +25,7 @@ const Search = ({ setFilteredTasks }) => {
   };
 
   return (
-    <div className="mb-4 w-[50%]">
+    <div className="mb-4 flex flex-col w-full xl:w-[50%] xl:flex-row gap-y-3">
       <input
         type="text"
         value={searchTerm}
@@ -43,7 +43,7 @@ const Search = ({ setFilteredTasks }) => {
           <option key={category.id} value={category.id}>{category.name}</option>
         ))}
       </select>
-      <button onClick={handleSearch} className="bg-[#28C1F8] hover:bg-[#0D6BFA] text-white p-2 rounded-full px-4 py-2">Search</button>
+      <button onClick={handleSearch} className="bg-[#28C1F8] hover:bg-[#0D6BFA] text-white p-2 rounded-full px-4 py-2 w-[110px] relative mx-auto">Search</button>
     </div>
   );
 };
